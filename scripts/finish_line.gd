@@ -1,0 +1,2 @@
+class_name FinishLine
+extends StaticBody2D

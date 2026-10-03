@@ -4,13 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://chk45sbe53y14" path="res://scenes/floor.tscn" id="2_dopym"]
 [ext_resource type="PackedScene" uid="uid://b72p38rfwlfch" path="res://scenes/player.tscn" id="3_ootpb"]
 [ext_resource type="PackedScene" uid="uid://cfhfibutt7ox6" path="res://scenes/rock.tscn" id="4_dwgg1"]
+[ext_resource type="PackedScene" uid="uid://e5ewcmd2ajwt" path="res://scenes/finish_line.tscn" id="5_ru4tf"]
 
 [node name="Level1" type="Node2D" unique_id=963956770]
 script = ExtResource("1_jwv3a")
 
 [node name="Floor" parent="." unique_id=1536830416 instance=ExtResource("2_dopym")]
 position = Vector2(0, 610)
-scale = Vector2(3, 1)
+scale = Vector2(6, 1)
+
+[node name="Floor2" parent="." unique_id=1798165315 instance=ExtResource("2_dopym")]
+position = Vector2(4610, 510)
+scale = Vector2(0.3, 1)
+
+[node name="Floor3" parent="." unique_id=257097353 instance=ExtResource("2_dopym")]
+position = Vector2(4960, 410)
+scale = Vector2(0.3, 1)
+
+[node name="Floor4" parent="." unique_id=1678040935 instance=ExtResource("2_dopym")]
+position = Vector2(5310, 310)
+scale = Vector2(0.3, 1)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1241511202]
 scale = Vector2(26.095, 1)
@@ -30,3 +43,15 @@ position = Vector2(2050, 560)
 
 [node name="StaticBody2D3" parent="." unique_id=118639133 instance=ExtResource("4_dwgg1")]
 position = Vector2(3030, 560)
+
+[node name="StaticBody2D4" parent="." unique_id=1960910848 instance=ExtResource("4_dwgg1")]
+position = Vector2(4560, 560)
+
+[node name="StaticBody2D5" parent="." unique_id=498616071 instance=ExtResource("4_dwgg1")]
+position = Vector2(4910, 460)
+
+[node name="StaticBody2D6" parent="." unique_id=429377143 instance=ExtResource("4_dwgg1")]
+position = Vector2(5260, 360)
+
+[node name="FinishLine" parent="." unique_id=809478107 instance=ExtResource("5_ru4tf")]
+position = Vector2(6900, 470)

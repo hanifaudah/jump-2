@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cfhfibutt7ox6"]
 
 [ext_resource type="Texture2D" uid="uid://6avfj33a470y" path="res://assets/rock.png" id="1_1di36"]
+[ext_resource type="Script" uid="uid://dxj5yoyidrrc3" path="res://scenes/rock.gd" id="1_mek2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l62v7"]
 size = Vector2(100, 100)
 
 [node name="Rock" type="StaticBody2D" unique_id=1739663039]
+script = ExtResource("1_mek2u")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=596985645]
 anchors_preset = 8

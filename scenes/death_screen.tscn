@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://mmydow6ddikw"]
+
+[ext_resource type="Texture2D" uid="uid://dllnb2jhnprkg" path="res://assets/death_screen.png" id="1_uyutr"]
+
+[node name="DeathScreen" type="Node2D" unique_id=1371742448]
+
+[node name="DeathScreen" type="Sprite2D" parent="." unique_id=2085223322]
+position = Vector2(580, 330)
+texture = ExtResource("1_uyutr")

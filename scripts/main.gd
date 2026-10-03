@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var camera: Camera2D = $Camera2D
 var player: Player
+var finish_line: FinishLine
 var viewport_size: Vector2
 var offset: float
 
@@ -18,11 +19,26 @@ func _ready():
 	add_child(level)
 
 	player = level.get_node("Player") as Player
+	player.died.connect(_on_player_died)
+	player.level_completed.connect(_on_player_level_completed)
 	player.position.x = player.get_width()
+	
+	finish_line = level.get_node("FinishLine") as FinishLine
+
+func _on_player_died():
+	get_tree().reload_current_scene()
+	
+func _on_player_level_completed():
+	get_tree().reload_current_scene()
 
 func _process(_delta):
 	if player:
-		camera.position.x = max(camera.position.x, player.global_position.x + offset)
+		# nearing finish line
+		if camera.position.x + viewport_size.x >= finish_line.position.x:
+			camera.position.x = finish_line.position.x - viewport_size.x
+		else:
+			camera.position.x = max(camera.position.x, player.global_position.x + offset)
+			
 		
 func _render_background():
 	# Parallax setup
