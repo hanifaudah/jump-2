@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://b4f5j0u8r1dry"]
+
+[ext_resource type="PackedScene" uid="uid://chk45sbe53y14" path="res://scenes/floor.tscn" id="1_7uttt"]
+[ext_resource type="PackedScene" uid="uid://b72p38rfwlfch" path="res://scenes/player.tscn" id="2_6lxtr"]
+[ext_resource type="PackedScene" uid="uid://cfhfibutt7ox6" path="res://scenes/rock.tscn" id="3_b72m1"]
+[ext_resource type="PackedScene" uid="uid://e5ewcmd2ajwt" path="res://scenes/finish_line.tscn" id="4_5mhml"]
+[ext_resource type="PackedScene" uid="uid://c1uakvgq0caoh" path="res://scenes/color_wall.tscn" id="5_rupth"]
+
+[node name="Level2" type="Node2D" unique_id=963956770]
+
+[node name="Floor" parent="." unique_id=1536830416 instance=ExtResource("1_7uttt")]
+position = Vector2(0, 610)
+scale = Vector2(6, 1)
+
+[node name="Floor2" parent="." unique_id=1798165315 instance=ExtResource("1_7uttt")]
+position = Vector2(1080, 510)
+scale = Vector2(0.5, 1)
+
+[node name="Floor3" parent="." unique_id=297044904 instance=ExtResource("1_7uttt")]
+position = Vector2(1660, 410)
+scale = Vector2(0.5, 1)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1241511202]
+scale = Vector2(26.095, 1)
+points = PackedVector2Array(0, 600)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." unique_id=35438079 instance=ExtResource("2_6lxtr")]
+position = Vector2(150, 560)
+speed = 1000.0
+
+[node name="StaticBody2D" parent="." unique_id=1739663039 instance=ExtResource("3_b72m1")]
+position = Vector2(1030, 560)
+
+[node name="StaticBody2D2" parent="." unique_id=1798894128 instance=ExtResource("3_b72m1")]
+position = Vector2(1610, 460)
+
+[node name="StaticBody2D3" parent="." unique_id=118639133 instance=ExtResource("3_b72m1")]
+position = Vector2(3860, 560)
+
+[node name="StaticBody2D4" parent="." unique_id=268378546 instance=ExtResource("3_b72m1")]
+position = Vector2(7440, 660)
+
+[node name="FinishLine" parent="." unique_id=809478107 instance=ExtResource("4_5mhml")]
+position = Vector2(8050, 470)
+
+[node name="ColorWallCyan" parent="." unique_id=580985053 instance=ExtResource("5_rupth")]
+position = Vector2(1510, 380)
+
+[node name="StaticBody2D5" parent="." unique_id=753745418 instance=ExtResource("3_b72m1")]
+position = Vector2(2190, 360)
+
+[node name="ColorWallCyan2" parent="." unique_id=1605739278 instance=ExtResource("5_rupth")]
+position = Vector2(2090, 280)
+color_state = 1
+
+[node name="Floor4" parent="." unique_id=299752812 instance=ExtResource("1_7uttt")]
+position = Vector2(2240, 310)
+scale = Vector2(0.5, 1)
+
+[node name="Floor5" parent="." unique_id=913705651 instance=ExtResource("1_7uttt")]
+position = Vector2(5730, 460)
+scale = Vector2(0.5, 1)
+
+[node name="Floor6" parent="." unique_id=1454251645 instance=ExtResource("1_7uttt")]
+position = Vector2(6910, 710)
+scale = Vector2(0.5, 1)
+
+[node name="Floor7" parent="." unique_id=115046339 instance=ExtResource("1_7uttt")]
+position = Vector2(7490, 610)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D6" parent="." unique_id=1913415937 instance=ExtResource("3_b72m1")]
+position = Vector2(2770, 260)
+
+[node name="ColorWallCyan3" parent="." unique_id=1804299856 instance=ExtResource("5_rupth")]
+position = Vector2(2670, 180)
+color_state = 1
+
+[node name="ColorWallMagenta" parent="." unique_id=2116916417 instance=ExtResource("5_rupth")]
+position = Vector2(3230, 490)
+
+[node name="ColorWallMagenta2" parent="." unique_id=1790664470 instance=ExtResource("5_rupth")]
+position = Vector2(4440, 490)
+color_state = 1
+
+[node name="ColorWallMagenta3" parent="." unique_id=547513423 instance=ExtResource("5_rupth")]
+position = Vector2(5140, 490)
+color_state = 2
+
+[node name="ColorWallYellow" parent="." unique_id=1896465606 instance=ExtResource("5_rupth")]
+position = Vector2(5780, 560)
+scale = Vector2(1, 0.4)
+color_state = 2
+
+[node name="ColorWallYellow4" parent="." unique_id=1959727712 instance=ExtResource("5_rupth")]
+position = Vector2(5780, 410)
+scale = Vector2(1, 0.4)
+
+[node name="ColorWallYellow5" parent="." unique_id=1409325320 instance=ExtResource("5_rupth")]
+position = Vector2(6000, 410)
+scale = Vector2(1, 0.4)
+
+[node name="ColorWallYellow6" parent="." unique_id=1368234256 instance=ExtResource("5_rupth")]
+position = Vector2(6250, 410)
+scale = Vector2(1, 0.4)
+
+[node name="ColorWallYellow2" parent="." unique_id=2058931290 instance=ExtResource("5_rupth")]
+position = Vector2(6010, 560)
+scale = Vector2(1, 0.4)
+color_state = 2
+
+[node name="ColorWallYellow3" parent="." unique_id=787818662 instance=ExtResource("5_rupth")]
+position = Vector2(6250, 560)
+scale = Vector2(1, 0.4)
+color_state = 2

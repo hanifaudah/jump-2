@@ -7,7 +7,7 @@ var player: Player
 var finish_line: FinishLine
 var viewport_size: Vector2
 var offset: float
-var collor_walls: Array[ColorWall] = []
+var color_walls: Array[ColorWall] = []
 
 func _ready():
 	viewport_size = get_viewport_rect().size
@@ -15,7 +15,7 @@ func _ready():
 	_render_background()
 	
 	offset = -viewport_size.x * (1.0/3.0)
-	var level_scene = load("res://scenes/level2.tscn")
+	var level_scene = load("res://scenes/level1.tscn")
 	var level = level_scene.instantiate()
 	add_child(level)
 
@@ -29,7 +29,7 @@ func _ready():
 	
 	for child in level.get_children():
 		if child is ColorWall:
-			collor_walls.append(child)
+			color_walls.append(child)
 
 func _on_player_died():
 	get_tree().reload_current_scene()
@@ -38,7 +38,7 @@ func _on_player_level_completed():
 	get_tree().reload_current_scene()
 	
 func _on_player_color_changed():
-	for wall in collor_walls:
+	for wall in color_walls:
 		wall.set_player_collision(player.color_state)
 
 func _process(_delta):
