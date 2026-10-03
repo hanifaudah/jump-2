@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b4f5j0u8r1dry"]
+
+[ext_resource type="PackedScene" uid="uid://chk45sbe53y14" path="res://scenes/floor.tscn" id="2_yqkch"]
+[ext_resource type="PackedScene" uid="uid://b72p38rfwlfch" path="res://scenes/player.tscn" id="3_6ep0u"]
+[ext_resource type="PackedScene" uid="uid://cfhfibutt7ox6" path="res://scenes/rock.tscn" id="4_hrcei"]
+[ext_resource type="PackedScene" uid="uid://c1uakvgq0caoh" path="res://scenes/color_wall.tscn" id="5_alqfr"]
+[ext_resource type="PackedScene" uid="uid://e5ewcmd2ajwt" path="res://scenes/finish_line.tscn" id="5_xa7n4"]
+
+[node name="Level2" type="Node2D" unique_id=963956770]
+
+[node name="Floor" parent="." unique_id=1536830416 instance=ExtResource("2_yqkch")]
+position = Vector2(0, 610)
+scale = Vector2(6, 1)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1241511202]
+scale = Vector2(26.095, 1)
+points = PackedVector2Array(0, 600)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." unique_id=35438079 instance=ExtResource("3_6ep0u")]
+position = Vector2(150, 560)
+speed = 1000.0
+
+[node name="StaticBody2D" parent="." unique_id=1739663039 instance=ExtResource("4_hrcei")]
+position = Vector2(1030, 560)
+
+[node name="StaticBody2D3" parent="." unique_id=118639133 instance=ExtResource("4_hrcei")]
+position = Vector2(3030, 560)
+
+[node name="StaticBody2D4" parent="." unique_id=1520956565 instance=ExtResource("4_hrcei")]
+position = Vector2(5000, 560)
+
+[node name="FinishLine" parent="." unique_id=809478107 instance=ExtResource("5_xa7n4")]
+position = Vector2(6900, 470)
+
+[node name="ColorWallCyan" parent="." unique_id=580985053 instance=ExtResource("5_alqfr")]
+position = Vector2(2050, 490)
+
+[node name="ColorWallMagenta" parent="." unique_id=2116916417 instance=ExtResource("5_alqfr")]
+position = Vector2(4010, 490)
+color_state = 1
+
+[node name="ColorWallYellow" parent="." unique_id=1896465606 instance=ExtResource("5_alqfr")]
+position = Vector2(5880, 490)
+color_state = 2

@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://dhshh1vyawgji"]
 
-[ext_resource type="Script" uid="uid://c1c64sv0gsvyo" path="res://scripts/level1.gd" id="1_jwv3a"]
 [ext_resource type="PackedScene" uid="uid://chk45sbe53y14" path="res://scenes/floor.tscn" id="2_dopym"]
 [ext_resource type="PackedScene" uid="uid://b72p38rfwlfch" path="res://scenes/player.tscn" id="3_ootpb"]
 [ext_resource type="PackedScene" uid="uid://cfhfibutt7ox6" path="res://scenes/rock.tscn" id="4_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://e5ewcmd2ajwt" path="res://scenes/finish_line.tscn" id="5_ru4tf"]
 
 [node name="Level1" type="Node2D" unique_id=963956770]
-script = ExtResource("1_jwv3a")
 
 [node name="Floor" parent="." unique_id=1536830416 instance=ExtResource("2_dopym")]
 position = Vector2(0, 610)

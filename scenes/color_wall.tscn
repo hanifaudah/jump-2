@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c1uakvgq0caoh"]
+
+[ext_resource type="Texture2D" uid="uid://bts1ko4c5dc2g" path="res://assets/player_sprite.png" id="1_bp4lu"]
+[ext_resource type="Script" uid="uid://bqpdp3s5aysi7" path="res://scripts/color_wall.gd" id="1_ndbe1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weytg"]
+size = Vector2(100, 260)
+
+[node name="ColorWall" type="StaticBody2D" unique_id=580985053]
+script = ExtResource("1_ndbe1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=472356390]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -125.0
+offset_right = 50.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23137255, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1326348395]
+shape = SubResource("RectangleShape2D_weytg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=389477316]
+position = Vector2(-1.9073486e-06, 4.9999866)
+scale = Vector2(0.40517244, 0.9602649)
+texture = ExtResource("1_bp4lu")
