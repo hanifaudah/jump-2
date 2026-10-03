@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://gh0bqcvaxsd2"]
+
+[ext_resource type="Texture2D" uid="uid://c78gas4n1b02y" path="res://assets/the_end.png" id="1_a842l"]
+[ext_resource type="Script" uid="uid://bpi5rsa1j1xnx" path="res://scenes/the_end.gd" id="1_wtwb0"]
+[ext_resource type="FontFile" uid="uid://diu0qdhvxadm0" path="res://assets/CourierPrime-Regular.ttf" id="2_2x4e2"]
+
+[node name="TheEnd" type="Control" unique_id=1784587644]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtwb0")
+
+[node name="TheEnd" type="Sprite2D" parent="." unique_id=1151266611]
+position = Vector2(570, 300)
+texture = ExtResource("1_a842l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=549827357]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -328.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=395586466]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2x4e2")
+text = "<Press \"jump\" to play again>"

@@ -40,9 +40,13 @@ func _ready():
 	_set_level(level_num)
 
 func _on_player_died():
-	get_tree().reload_current_scene()
+	_set_level(level_num)
 	
 func _on_player_level_completed():
+	if level_num == 3:
+		get_tree().change_scene_to_file("res://scenes/the_end.tscn")
+		return
+		
 	level_num += 1
 	_set_level(level_num)
 	
