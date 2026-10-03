@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dhshh1vyawgji"]
+
+[ext_resource type="Script" uid="uid://c1c64sv0gsvyo" path="res://scripts/level1.gd" id="1_jwv3a"]
+[ext_resource type="PackedScene" uid="uid://chk45sbe53y14" path="res://scenes/floor.tscn" id="2_dopym"]
+[ext_resource type="PackedScene" uid="uid://b72p38rfwlfch" path="res://scenes/player.tscn" id="3_ootpb"]
+[ext_resource type="PackedScene" uid="uid://cfhfibutt7ox6" path="res://scenes/rock.tscn" id="4_dwgg1"]
+
+[node name="Level1" type="Node2D" unique_id=963956770]
+script = ExtResource("1_jwv3a")
+
+[node name="Floor" parent="." unique_id=1536830416 instance=ExtResource("2_dopym")]
+position = Vector2(0, 610)
+scale = Vector2(3, 1)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1241511202]
+scale = Vector2(26.095, 1)
+points = PackedVector2Array(0, 600)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." unique_id=35438079 instance=ExtResource("3_ootpb")]
+position = Vector2(150, 560)
+speed = 1000.0
+
+[node name="StaticBody2D" parent="." unique_id=1739663039 instance=ExtResource("4_dwgg1")]
+position = Vector2(1030, 560)
+
+[node name="StaticBody2D2" parent="." unique_id=77952584 instance=ExtResource("4_dwgg1")]
+position = Vector2(2050, 560)
+
+[node name="StaticBody2D3" parent="." unique_id=118639133 instance=ExtResource("4_dwgg1")]
+position = Vector2(3030, 560)

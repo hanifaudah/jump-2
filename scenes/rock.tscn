@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cfhfibutt7ox6"]
+
+[ext_resource type="Texture2D" uid="uid://6avfj33a470y" path="res://assets/rock.png" id="1_1di36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l62v7"]
+size = Vector2(100, 100)
+
+[node name="Rock" type="StaticBody2D" unique_id=1739663039]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=596985645]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21960784, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1666791094]
+shape = SubResource("RectangleShape2D_l62v7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=357927978]
+position = Vector2(-4.5463953e-06, 0.38362458)
+scale = Vector2(0.36, 0.349)
+texture = ExtResource("1_1di36")
