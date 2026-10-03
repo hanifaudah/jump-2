@@ -8,34 +8,43 @@ var finish_line: FinishLine
 var viewport_size: Vector2
 var offset: float
 var color_walls: Array[ColorWall] = []
+var level_num: int = 1
+var level: Node
 
+func _set_level(new_level_num):
+	if level: remove_child(level)
+	var level_scene = load("res://scenes/level%d.tscn" % new_level_num)
+	level = level_scene.instantiate()
+	add_child(level)
+	
+	player = level.get_node("Player") as Player
+	player.died.connect(_on_player_died)
+	player.level_completed.connect(_on_player_level_completed)
+	player.color_changed.connect(_on_player_color_changed)
+	player.position.x = player.get_width()
+	camera.position.x = player.position.x
+	
+	for child in level.get_children():
+		if child is ColorWall:
+			color_walls.append(child)
+	
+	finish_line = level.get_node("FinishLine") as FinishLine
+	
 func _ready():
 	viewport_size = get_viewport_rect().size
 	
 	_render_background()
 	
 	offset = -viewport_size.x * (1.0/3.0)
-	var level_scene = load("res://scenes/level1.tscn")
-	var level = level_scene.instantiate()
-	add_child(level)
-
-	player = level.get_node("Player") as Player
-	player.died.connect(_on_player_died)
-	player.level_completed.connect(_on_player_level_completed)
-	player.color_changed.connect(_on_player_color_changed)
-	player.position.x = player.get_width()
 	
-	finish_line = level.get_node("FinishLine") as FinishLine
-	
-	for child in level.get_children():
-		if child is ColorWall:
-			color_walls.append(child)
+	_set_level(level_num)
 
 func _on_player_died():
 	get_tree().reload_current_scene()
 	
 func _on_player_level_completed():
-	get_tree().reload_current_scene()
+	level_num += 1
+	_set_level(level_num)
 	
 func _on_player_color_changed():
 	for wall in color_walls:
@@ -48,7 +57,6 @@ func _process(_delta):
 			camera.position.x = finish_line.position.x - viewport_size.x
 		else:
 			camera.position.x = max(camera.position.x, player.global_position.x + offset)
-			
 		
 func _render_background():
 	# Parallax setup
