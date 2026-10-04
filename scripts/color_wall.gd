@@ -14,5 +14,4 @@ func _ready():
 	
 func set_player_collision(player_color_state: ColorService.ColorState):
 	var is_collision_disabled = player_color_state == color_state
-	print(is_collision_disabled)
 	collision_shape.set_deferred("disabled", is_collision_disabled)

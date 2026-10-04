@@ -6,10 +6,12 @@ extends Node2D
 var player: Player
 var finish_line: FinishLine
 var viewport_size: Vector2
+var visible_size: Vector2
 var offset: float
 var color_walls: Array[ColorWall] = []
 var level_num: int = 1
 var level: Node
+const FINAL_LEVEL_NUM = 3
 
 func _set_level(new_level_num):
 	if level: remove_child(level)
@@ -33,17 +35,21 @@ func _set_level(new_level_num):
 func _ready():
 	viewport_size = get_viewport_rect().size
 	
-	_render_background()
-	
-	offset = -viewport_size.x * (1.0/3.0)
-	
 	_set_level(level_num)
+	
+	camera.zoom = Vector2(0.5, 0.5)   # shows 25% more of the world
+	visible_size = viewport_size / camera.zoom
+	camera.position.y = viewport_size.y - visible_size.y
+	
+	offset = -visible_size.x * (1.0/5.0)
+	
+	_render_background()
 
 func _on_player_died():
 	_set_level(level_num)
 	
 func _on_player_level_completed():
-	if level_num == 3:
+	if level_num == FINAL_LEVEL_NUM:
 		get_tree().change_scene_to_file("res://scenes/the_end.tscn")
 		return
 		
@@ -57,8 +63,8 @@ func _on_player_color_changed():
 func _process(_delta):
 	if player:
 		# nearing finish line
-		if camera.position.x + viewport_size.x >= finish_line.position.x:
-			camera.position.x = finish_line.position.x - viewport_size.x
+		if camera.position.x + visible_size.x >= finish_line.position.x:
+			camera.position.x = finish_line.position.x - visible_size.x
 		else:
 			camera.position.x = max(camera.position.x, player.global_position.x + offset)
 		
@@ -76,9 +82,9 @@ func _render_background():
 	sprite.texture = load("res://assets/paper_bg.jpg")  # change to your image path
 	sprite.centered = false
 	# Scale to viewport height, keep aspect ratio so the tiles don't stretch
-	var s = viewport_size.y / sprite.texture.get_size().y
+	var s = visible_size.y / sprite.texture.get_size().y
 	sprite.scale = Vector2(s, s)
 	layer.add_child(sprite)
 	
 	# Repeat horizontally every one image width (in pixels, after scaling)
-	layer.motion_mirroring = Vector2(sprite.texture.get_size().x * s, 0)
+	layer.motion_mirroring = sprite.texture.get_size() * s

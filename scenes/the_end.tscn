@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gh0bqcvaxsd2"]
 
 [ext_resource type="Texture2D" uid="uid://c78gas4n1b02y" path="res://assets/the_end.png" id="1_a842l"]
-[ext_resource type="Script" uid="uid://bpi5rsa1j1xnx" path="res://scenes/the_end.gd" id="1_wtwb0"]
+[ext_resource type="Script" uid="uid://2jyi8srlxkyy" path="res://scripts/the_end.gd" id="1_wtwb0"]
 [ext_resource type="FontFile" uid="uid://diu0qdhvxadm0" path="res://assets/CourierPrime-Regular.ttf" id="2_2x4e2"]
 
 [node name="TheEnd" type="Control" unique_id=1784587644]
