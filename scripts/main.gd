@@ -14,7 +14,7 @@ var level: Node
 const FINAL_LEVEL_NUM = 3
 
 func _set_level(new_level_num):
-	if level: remove_child(level)
+	if level: level.queue_free()
 	var level_scene = load("res://scenes/level%d.tscn" % new_level_num)
 	level = level_scene.instantiate()
 	add_child(level)
@@ -26,6 +26,7 @@ func _set_level(new_level_num):
 	player.position.x = player.get_width()
 	camera.position.x = player.position.x
 	
+	color_walls.clear()
 	for child in level.get_children():
 		if child is ColorWall:
 			color_walls.append(child)
